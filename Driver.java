@@ -12,7 +12,9 @@ public class Driver {
 
         calculadora calc = new Calc_I();
         print("Bienvenido a la caluladora Posfix UVG!!\n\n");
-        print("Leyendo archivo \"datos.txt\"\n");
+
+        
+        print("Leyendo archivo \"" +  + ".txt\"\n");
         print(calc.decode("xd"));
         print("Gracias por utilizar la calculadora posfix UVG\n\n");
     }

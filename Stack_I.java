@@ -3,7 +3,7 @@
 * Algoritmos y Estructuras de Datos
 * Profesor: Moises Gonzales
 * Stack.java
-* Autor: Moises Gonzales
+* Autor: Diego Cordova
 * Ultima modificacion: 2021-02-2
 *
 * Interfaz Calculadora
