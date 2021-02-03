@@ -4,7 +4,7 @@
 * Profesor: Moises Gonzales
 * Stack.java
 * Autor: Diego Cordova
-* Ultima modificacion: 2021-02-2
+* Ultima modificacion: 2021-02-3
 *
 * Interfaz Calculadora
 * Interface de la calculadora

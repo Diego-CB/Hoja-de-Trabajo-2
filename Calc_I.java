@@ -4,7 +4,7 @@
 * Profesor: Moises Gonzales
 * CalcImplementation.java
 * Autor: Diego Cordova
-* Ultima modificacion: 2021-02-2
+* Ultima modificacion: 2021-02-3
 *
 * Interfaz Calculadora
 * Interface de la calculadora
@@ -119,14 +119,13 @@ public class Calc_I implements calculadora{
 
                     b = Integer.parseInt(this.aux.pop());
                     a = Integer.parseInt(this.aux.pop());
-                    this.aux.push(Integer.toString(multiplicacion(a, b)));
+                    this.aux.push(Integer.toString(division(a, b)));
                     operation_list += temp_s + "\t\tDividir:pop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
                 }
             }
         }
 
         int result = Integer.parseInt(this.aux.pop());
-        this.operation_list += "\nEL RESULTADO FINAL ES: " + result + "\n\n";
         return result;
     }
 
@@ -146,6 +145,7 @@ public class Calc_I implements calculadora{
             }
 
         } catch (FileNotFoundException e) {
+            this.operation_list = "\nEL archivo " + a + ".txt no se encontro en la carpeta, vuelva a intentar";
         }
 
         String temp_string = "";
@@ -162,6 +162,8 @@ public class Calc_I implements calculadora{
             }
 
             result = operar(this.stack);
+            this.operation_list += "\nEL RESULTADO FINAL ES: " + result + "\n\n";
+
         }
 
         return operation_list;
