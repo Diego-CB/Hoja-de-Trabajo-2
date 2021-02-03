@@ -17,14 +17,16 @@ public class Stack_I implements Stack<String> {
     private ArrayList<String> stack; // Arraylist used as stack
 
     /**
-    * Constructor for StackImplementation class 
+    * @author Diego Cordova
+    * @return for StackImplementation class object
     */
     public Stack_I (){
         this.stack = new ArrayList<String>();
     }
 
     /**
-    * Adds the item to the artibute stack
+    * @author Diego Cordova
+    * @return Adds the item to the artibute stack
     * @param item 
     */
     @Override
@@ -33,7 +35,8 @@ public class Stack_I implements Stack<String> {
     }
 
     /**
-    * Returns the las item added to the stack atribute 
+    * @author Diego Cordova
+    * @return the las item added to the stack atribute 
     */
     @Override
     public String pop() {
@@ -46,7 +49,8 @@ public class Stack_I implements Stack<String> {
     }
 
     /**
-    * Returns last item added to the stack 
+    * @author Diego Cordova
+    * @return last item added to the stack 
     */
     @Override
     public String peek() {
@@ -59,7 +63,8 @@ public class Stack_I implements Stack<String> {
     }
 
     /**
-    * Returns true if stack is empty and false if not 
+    * @author Diego Cordova
+    * @return true if stack is empty and false if not 
     */
     @Override
     public boolean empty() {
@@ -67,7 +72,8 @@ public class Stack_I implements Stack<String> {
     }
 
     /**
-    * Returns the number of elements in the stack
+    * @author Diego Cordova
+    * @return the number of elements in the stack
     */
     @Override
     public int size() {

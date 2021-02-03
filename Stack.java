@@ -3,7 +3,6 @@
 * Algoritmos y Estructuras de Datos
 * Profesor: Moises Gonzales
 * Stack.java
-* Autor: Moises Gonzales
 *
 * Interfaz Stack
 * Interface del stack

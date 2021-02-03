@@ -3,7 +3,7 @@
 * Algoritmos y Estructuras de Datos
 * Profesor: Moises Gonzales
 * CalcImplementation.java
-* Autor: Moises Gonzales
+* Autor: Diego Cordova
 * Ultima modificacion: 2021-02-2
 *
 * Interfaz Calculadora
@@ -28,11 +28,10 @@ public class Calc_I implements calculadora{
         this.stack = new Stack_I();
         this.aux = new Stack_I();
         this.op = new Stack_I();
-        this.operation_list = "ENTRADA\tOPERACION\t\tRESULTADOS\n";
     }
 
     /**
-    * Returns the add of the parametters
+    * @return the add of the parametters
     * @param x number for adding
     * @param y number for adding
     */
@@ -42,7 +41,7 @@ public class Calc_I implements calculadora{
     }
 
     /**
-    * Returns the substractions of the parametters
+    * @return the substractions of the parametters
     * @param x number for adding
     * @param y number for adding
     */
@@ -52,7 +51,7 @@ public class Calc_I implements calculadora{
     }
 
     /**
-    * Returns the multiplication of the parametters
+    * @return the multiplication of the parametters
     * @param x number for adding
     * @param y number for adding
     */
@@ -62,7 +61,7 @@ public class Calc_I implements calculadora{
     }
 
     /**
-    * Returns the divition of the parametters
+    * @return the divition of the parametters
     * @param x number for adding
     * @param y number for adding
     */
@@ -72,57 +71,63 @@ public class Calc_I implements calculadora{
     }
 
     /**
+    * @return the final result of the stacked operation 
     * @param stack stack wich contains the numbers and operations  
     */
     @Override
     public int operar(Stack x) {
         
+        this.operation_list += "\nENTRADA\t\tOPERACION\t\t\t\t\tRESULTADOS\n";
         String temp_s = "";
         int temp_i,a,b;
 
-        while(this.stack.size() != 0){
+        while(!this.stack.empty()){
 
             temp_s = this.stack.peek();
 
             try {
                 temp_i = Integer.parseInt(temp_s);
-                this.operation_list += temp_s + "\tpush operando\n";
+                this.operation_list += temp_s + "\t\tpush operando\n";
                 this.aux.push(this.stack.pop());
 
             } catch (Exception e) {
                 
+                temp_s = this.stack.pop();
+
                 if(temp_s.equals("+")){
 
                     b = Integer.parseInt(this.aux.pop());
                     a = Integer.parseInt(this.aux.pop());
                     this.aux.push(Integer.toString(suma(a, b)));
-                    operation_list += temp_s + "\t" + "Sumar:\tpop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
+                    operation_list += temp_s + "\t\tSumar: pop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
                     
                 } else if (temp_s.equals("-")){
 
                     b = Integer.parseInt(this.aux.pop());
                     a = Integer.parseInt(this.aux.pop());
                     this.aux.push(Integer.toString(resta(a, b)));
-                    operation_list += temp_s + "\t" + "Restar:\tpop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
+                    operation_list += temp_s + "\t\tRestar: pop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
 
                 } else if (temp_s.equals("*")){
 
                     b = Integer.parseInt(this.aux.pop());
                     a = Integer.parseInt(this.aux.pop());
                     this.aux.push(Integer.toString(multiplicacion(a, b)));
-                    operation_list += temp_s + "\t" + "Multiplicar:\tpop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
+                    operation_list += temp_s + "\t\tMultiplicar: pop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
 
                 } else if (temp_s.equals("/")){
 
                     b = Integer.parseInt(this.aux.pop());
                     a = Integer.parseInt(this.aux.pop());
                     this.aux.push(Integer.toString(multiplicacion(a, b)));
-                    operation_list += temp_s + "\t" + "Dividir:\tpop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
+                    operation_list += temp_s + "\t\tDividir:pop, pop y push del resultado\t\t" + this.aux.peek() + "\n";
                 }
             }
         }
 
-        return Integer.parseInt(this.aux.pop());
+        int result = Integer.parseInt(this.aux.pop());
+        this.operation_list += "\nEL RESULTADO FINAL ES: " + result + "\n\n";
+        return result;
     }
 
     /**
@@ -132,7 +137,7 @@ public class Calc_I implements calculadora{
     @Override
     public String decode(String a) { 
         
-        File file = new File("datos.txt");
+        File file = new File((a + ".txt"));
 
         try {
             Scanner scan = new Scanner(file);
@@ -147,7 +152,7 @@ public class Calc_I implements calculadora{
         String[] temp_array;
         int result;
 
-        while (!(this.op.empty())){
+        while (!this.op.empty()){
             
             temp_string = this.op.pop();
             temp_array = temp_string.split(" ");
@@ -157,9 +162,8 @@ public class Calc_I implements calculadora{
             }
 
             result = operar(this.stack);
-            this.operation_list += "REsultado final = " + result + "\n\nENTRADA\tOPERACION\t\tRESULTADOS\n";
-
         }
+
         return operation_list;
     }
 }
