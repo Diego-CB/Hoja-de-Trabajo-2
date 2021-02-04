@@ -1,3 +1,15 @@
+/*******************************************************
+* Universidad del Valle de Guatemala
+* Algoritmos y Estructuras de Datos
+* Profesor: Moises Gonzales
+* Stack_ITest.java
+* @author Diego Cordova
+* Ultima modificacion: 2021-02-3
+*
+* Class Stack_ITest
+* Unitary tests for class Stck_I
+********************************************************/
+
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
