@@ -55,8 +55,7 @@ public class Driver {
 
         print("Bienvenido a la caluladora Posfix UVG!!\n\n");
         boolean menu = true;
-        int opcion;
-
+        
         while (menu){
             String file = input();
             print("\nLEYENDO EL ARCHIVO: \"" + file + ".txt\"\n");
