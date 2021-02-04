@@ -19,7 +19,7 @@ public class Driver {
 
     
     /** 
-     * simplification of Systom.out.println
+     * simplification of System.out.println
      * @param o
      */
     private static void print(Object o){
