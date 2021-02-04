@@ -17,15 +17,30 @@ public class Driver {
     private static calculadora calc = new Calc_I();
     private static Scanner scan = new Scanner(System.in);
 
+    
+    /** 
+     * simplification of Systom.out.println
+     * @param o
+     */
     private static void print(Object o){
         System.out.println(o);
     }
 
+    
+    /** 
+     * input 
+     * @return String
+     */
     private static String input(){
         print("\nIngrese el nombre del archivo a leer sin postfijo de tipo\n");
         return scan.next();
     }
 
+    
+    /** 
+     * @param size
+     * @return boolean
+     */
     private static boolean input(int size){
 
         print("\nEscoja una opcion:\n1. leer otro archivo\n2. Salir\n");
@@ -51,6 +66,11 @@ public class Driver {
         }
     }
 
+    
+    /** 
+     * main method
+     * @param args
+     */
     public static void main (String[] args){
 
         print("Bienvenido a la caluladora Posfix UVG!!\n\n");
