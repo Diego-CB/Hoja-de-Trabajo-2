@@ -10,18 +10,18 @@
 * Interface de la calculadora
 ********************************************************/
 
-import java.util.ArrayList;
+import java.util.Vector;
 
 public class Stack_I implements Stack<String> {
 
-    private ArrayList<String> stack; // Arraylist used as stack
+    private Vector<String> stack; // Arraylist used as stack
 
     /**
     * @author Diego Cordova
     * @return for StackImplementation class object
     */
     public Stack_I (){
-        this.stack = new ArrayList<String>();
+        this.stack = new Vector<String>(0, 1);
     }
 
     /**
