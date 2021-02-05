@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
     
 public class Stack_ITest {
         
-    private static Stack<String> stack = new Stack_I();
+    private static stack<String> stack = new Stack_I();
 
     /**
      * push an empty String to the stack

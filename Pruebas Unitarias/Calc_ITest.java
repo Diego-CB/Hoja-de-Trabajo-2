@@ -44,8 +44,18 @@ public class Calc_ITest {
     
     @Test
     public void operar_withEmptyStack() {
-        Stack<String> stack = new Stack_I();
-        calc.operar(stack);
+        stack<String> stack = new Stack_I<String>();
+
+        boolean exceptionCatched =  false;
+
+        try {
+            calc.operar(stack);
+            
+        } catch (Exception e) {
+            exceptionCatched = true;
+        }
+
+        assertEquals(true, exceptionCatched);
     }
 
     @Test
