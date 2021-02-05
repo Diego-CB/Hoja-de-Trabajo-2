@@ -27,6 +27,7 @@ public class Calc_I implements calculadora{
         this.stack = new Stack_I();
         this.aux = new Stack_I();
         this.op = new Stack_I();
+        this.operation_list = "";
     }
 
     /**
